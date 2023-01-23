@@ -46,3 +46,56 @@ c = int(input())
 d = int(input())
 m = min(a,b,c,d)
 print(m)
+
+a = int(input())  # программа, которая по введённому возрасту пользователя сообщает, к какой возрастной группе он относится.
+if 0 <= a <= 13:
+    print('детство')
+if 14 <= a <= 24:
+    print('молодость')
+if 25 <= a <= 59:
+    print('зрелость')
+if a >= 60:
+    print('старость')
+
+n = int(input()) # программа, которая должна вывести ответ Циско на вопрос Флэша.
+k = int(input())
+if n > k:
+    print("NO")
+elif k > n:
+    print("YES")
+elif n == k:
+    print("Don't know")
+
+a = int(input()) # программа, которая принимает три положительных числа и определяет вид треугольника, длины сторон которого равны введенным числам.
+b = int(input())
+c = int(input())
+if a == b != c:
+    print("Равнобедренный")
+elif a != b == c:
+    print("Равнобедренный")
+elif a == c != b:
+    print("Равнобедренный")    
+elif a == b == c:
+    print("Равносторонний")
+elif a != b != c:
+    print("Разносторонний")
+
+a = int(input())  # программа, которая находит среднее по величине число.
+b = int(input())
+c = int(input())
+if a < b < c:
+    print(b)
+elif a < c < b:
+    print(c)
+elif a < b > c:
+    print(a)
+elif a > b > c:
+    print(b)
+
+m = int(input()) # программа, которая выводит на экран количество дней в этом месяце. Принять, что год является невисокосным.
+if m == 2:
+    print(28)
+elif m == 1 or m == 3 or m == 5 or m == 7 or m == 8 or m == 10 or m == 12:
+    print(31)
+elif m == 4 or m == 6 or m == 9 or m == 11:
+    print(30)
