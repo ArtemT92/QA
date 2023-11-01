@@ -25,3 +25,16 @@ select  round(AVG(year(current_date) - year(BirthDate))) as age from chinook.emp
 select FirstName, LastName, Company from chinook.customer where CustomerId = '5';
 
 
+select * from chinook.customer join chinook.invoice on chinook.customer.CustomerId = chinook.invoice.CustomerId where chinook.invoice.CustomerId = '13' order by Total asc;
+select chinook.album.AlbumId, chinook.album.Title, count(chinook.track.TrackId) as total from chinook.album join chinook.track on chinook.album.AlbumId = chinook.track.AlbumId group by chinook.album.AlbumId;
+select sum(Total) from chinook.invoice where InvoiceDate between '2012-01-01 00:00:00' and '2012-03-31 23:59:59' and BillingCountry = 'USA';
+select chinook.genre.GenreId, chinook.genre.Name, count(chinook.track.Name) as 'Кол-во треков',  avg(chinook.track.UnitPrice) as 'Средняя стоимость' from chinook.genre join chinook.track on chinook.genre.GenreId = chinook.track.GenreId group by chinook.genre.GenreId;
+select chinook.customer.CustomerId, chinook.customer.FirstName, chinook.customer.LastName, sum(chinook.invoice.Total) as sum from chinook.customer join chinook.invoice on chinook.customer.CustomerId = chinook.invoice.CustomerId group by chinook.customer.CustomerId, chinook.customer.FirstName, chinook.customer.LastName Limit 1;
+use testdb;
+show Tables;
+select * from department;
+insert into department (id, department, description_dep)
+values (5, 'отдел аккаунтинга', 'сопровождение клиента')
+insert into department (id, department, description_dep)
+values (6, 'техническая поддержка', 'помощь пользователям')
+
